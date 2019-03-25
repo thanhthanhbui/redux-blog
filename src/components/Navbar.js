@@ -1,16 +1,27 @@
 import React from 'react'
-import { Menu } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Menu, } from 'semantic-ui-react'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => (
-  <Menu>
-    <Link to='/'>
-      <Menu.Item>Home</Menu.Item>
-    </Link>
-    <Link to='/blogs'>
-      <Menu.Item>Blogs</Menu.Item>
-    </Link>
-  </Menu>
+    <Menu style={{ background: 'pink', position: 'sticky', }}>
+      <Menu.Item>
+        <NavLink exact to='/' activeStyle={navStyles.active}>
+          Home
+        </NavLink>
+      </Menu.Item>
+      <Menu.Item>
+        <NavLink exact to='/blogs' activeStyle={navStyles.active}>
+          Blogs
+        </NavLink>
+      </Menu.Item>
+    </Menu>
 )
+
+const navStyles = {
+  active: {
+    color: 'red',
+    fontWeight: 'bold',
+  }
+}
 
 export default Navbar

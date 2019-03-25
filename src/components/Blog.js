@@ -20,14 +20,17 @@ class Blog extends React.Component {
   render() {
     return (
       <div>
-        <h4>{this.props.blog.title}</h4>
-        <p>{this.props.blog.body}</p>
+        <h3 style={{ color: 'mediumvioletred', textDecoration: 'underline', }}>{this.props.blog.title}</h3>
+        <p style={{ color: 'mediumvioletred' }}>{this.props.blog.body}</p>
         <Button inverted color='blue' onClick={this.handleUpdate}>
           <Icon name='edit' />
         </Button>
         <Button inverted color='red' onClick={this.handleDelete}>
           <Icon name='trash' />
         </Button>
+        <br />
+        <br />
+        <hr />
       </div>
     )
   }

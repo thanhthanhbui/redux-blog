@@ -23,16 +23,17 @@ class BlogForm extends React.Component {
   render() {
     const { title, body } = this.state
     return (
-      <div>
-        <Header as='h3'>Add Blog</Header>
-        <Form onSubmit={this.handleSubmit}>
+      <div style = {styles.bg}>
+        <br />
+        <Header as='h1' style={styles.header}>Add Blog</Header>
+        <Form style={styles.form} onSubmit={this.handleSubmit}>
           <Input
             name='title'
             placeholder='Title'
             value={title}
             required
             onChange={this.handleChange}
-            style={{ width: '1000px', }}
+            style={{ width: '100%', }}
           />
           <br />
           <Input
@@ -41,12 +42,34 @@ class BlogForm extends React.Component {
             value={body}
             required
             onChange={this.handleChange}
-            style={{ height: '200px', width: '1000px', }}
+            style={{ height: '200px', width: '100%', }}
           />
-          <Form.Button>Submit</Form.Button>
+          <Form.Button inverted color='red' style = {styles.btn}>Post</Form.Button>
         </Form>
+        <br />
+        <br />
       </div>
     )
+  }
+}
+
+const styles = {
+  bg: {
+    background: 'linear-gradient(to bottom right, pink, plum)',
+    height: '100%'
+  },
+  btn: {
+    margin: '20px'
+  },
+  header: {
+    textAlign: 'center',
+    color: 'mediumvioletred',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginLeft: '50px',
+    marginRight: '50px',
   }
 }
 

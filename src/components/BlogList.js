@@ -1,23 +1,21 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Header } from 'semantic-ui-react';
 import Blog from './Blog'
-import Edit from './Edit'
+import EditForm from './EditForm'
 
 class BlogList extends React.Component {
   render() {
     const { blogs } = this.props
     return (
       <div>
-        <Header as='h1'>All Blogs</Header>
-        <ol>
+        <ul>
           { blogs.map( blog => (
             <div key={blog.id}>
-              {blog.editing ? <Edit blog={blog} key={blog.id} /> :
+              {blog.editing ? <EditForm blog={blog} key={blog.id} /> :
               <Blog key={blog.id} blog={blog} /> }
             </div>
           ))}
-        </ol>
+        </ul>
         </div>
     )
   }
