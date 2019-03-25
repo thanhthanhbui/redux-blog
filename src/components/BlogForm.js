@@ -63,7 +63,7 @@ const styles = {
   },
   header: {
     textAlign: 'center',
-    color: 'mediumvioletred',
+    color: 'deepskyblue',
   },
   form: {
     display: 'flex',
