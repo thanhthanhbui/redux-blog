@@ -42,7 +42,7 @@ class BlogForm extends React.Component {
             value={body}
             required
             onChange={this.handleChange}
-            style={{ height: '200px', width: '100%', }}
+            style={{ height: '100px', width: '100%', }}
           />
           <Form.Button inverted color='red' style = {styles.btn}>Post</Form.Button>
         </Form>
@@ -55,7 +55,7 @@ class BlogForm extends React.Component {
 
 const styles = {
   bg: {
-    background: 'linear-gradient(to bottom right, pink, plum)',
+    background: 'linear-gradient(to bottom right, pink, lightblue)',
     height: '100%'
   },
   btn: {

@@ -29,15 +29,12 @@ const Blogs =() => (
 
 const styles = {
   bg: {
-    background: 'linear-gradient(to bottom right, pink, plum)',
+    background: 'linear-gradient(to bottom right, pink, lightblue)',
     height: '100%'
   },
   btn: {
-    marginTop: '20px',
-    marginLeft: '20px',
-    transition: 'background 0.2s ease',
-    cursor: 'pointer',
-  },
+    margin: '40px'
+  }
 }
     // btn:hover {
     //   background: '#606060',

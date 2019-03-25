@@ -5,6 +5,11 @@ import { Form, Input, } from 'semantic-ui-react';
 class EditForm extends React.Component {
   state = { title: '', body: '', }
 
+  componentDidMount() {
+    if (this.props.blog.id)
+      this.setState({ title: this.props.blog.title, body: this.props.blog.body, });
+    }
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value })
   }
@@ -25,7 +30,7 @@ class EditForm extends React.Component {
     const { title, body, } = this.state
     return (
       <div style = {styles.bg}>
-        <Form onSubmit={this.handleEdit}>
+        <Form style={styles.form} onSubmit={this.handleEdit}>
           <Input
             name='title'
             placeholder='Title'
@@ -33,7 +38,7 @@ class EditForm extends React.Component {
             defaultValue={this.props.blog.title}
             required
             onChange={this.handleChange}
-            style={{ width: '1000px', }}
+            style={{ width: '100%', }}
             />
           <br />
           <Input
@@ -43,7 +48,7 @@ class EditForm extends React.Component {
             defaultValue={this.props.blog.body}
             required
             onChange={this.handleChange}
-            style={{ height: '200px', width: '1000px', }}
+            style={{ height: '100px', width: '100%', }}
             />
           <Form.Button inverted color='red' style={styles.btn}>Update</Form.Button>
         </Form>
@@ -54,14 +59,18 @@ class EditForm extends React.Component {
 
 const styles = {
   bg: {
-    background: 'linear-gradient(to bottom right, pink, plum)',
+    background: 'linear-gradient(to bottom right, pink, lightblue)',
     height: '100%'
   },
   btn: {
-    marginTop: '20px',
-    marginLeft: '20px',
-    marginBottom: '20px',
+    margin: '20px'
   },
+  form: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginLeft: '50px',
+    marginRight: '50px',
+  }
 }
 
 export default connect()(EditForm)
