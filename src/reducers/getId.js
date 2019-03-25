@@ -1,4 +1,4 @@
-const getId = (state = 0, action) => {
+const getId = (state = 1, action) => {
   switch (action.type) {
     case 'INC_ID':
       return state + 1
